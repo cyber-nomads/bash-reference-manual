@@ -19,6 +19,8 @@
   "devDependencies": {
     "gulp": "3.9.1",
     "gulp-clean": "0.4.0",
-    "gulp-debug": "4.0.0"
+    "gulp-debug": "4.0.0",
+    "gulp-html-beautify": "1.0.1",
+    "gulp-html-lint": "0.0.2"
   }
 }
