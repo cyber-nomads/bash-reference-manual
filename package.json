@@ -4,6 +4,7 @@
   "description": "Official GNU Bash Reference Manual's visual improvement",
   "main": "server.js",
   "scripts": {
+    "build": "gulp build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
