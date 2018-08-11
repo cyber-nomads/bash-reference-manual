@@ -17,12 +17,15 @@
   },
   "homepage": "https://github.com/cyber-nomads/bash-reference-manual#readme",
   "devDependencies": {
+    "autoprefixer": "9.1.0",
+    "cssnano": "4.0.5",
     "gulp": "3.9.1",
     "gulp-clean": "0.4.0",
     "gulp-debug": "4.0.0",
     "gulp-html-beautify": "1.0.1",
     "gulp-html-lint": "0.0.2",
-    "gulp-sass": "4.0.1",
-    "gulp-htmlmin": "4.0.0"
+    "gulp-htmlmin": "4.0.0",
+    "gulp-postcss": "8.0.0",
+    "gulp-sass": "4.0.1"
   }
 }

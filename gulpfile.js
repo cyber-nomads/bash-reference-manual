@@ -5,17 +5,19 @@ const htmlLint = require('gulp-html-lint');
 const htmlbeautify = require('gulp-html-beautify');
 const htmlmin = require('gulp-htmlmin');
 const sass = require('gulp-sass');
- 
+const postcss = require('gulp-postcss');
+const autoprefixer = require('autoprefixer');
+const cssnano = require('cssnano');
 
 gulp.task('default', ["build"]);
 
 gulp.task('clean', () => {
-    return gulp.src(['./index.html', 'tmp/**/*'], {read: false})
+    return gulp.src(['./index.html', 'tmp/**/*', 'css/**/*'], {read: false})
         .pipe(debug({title: '[clean]'}))
         .pipe(clean());
 });
  
-gulp.task('build', ['html'], () =>
+gulp.task('build', ['html', 'css'], () =>
     gulp.src('tmp/**/*')
         .pipe(debug({title: '[build]'}))
         .pipe(gulp.dest('./'))
@@ -64,4 +66,15 @@ gulp.task('sass', () => {
  
 gulp.task('sass:watch', () => {
   gulp.watch('src/sass/**/*.scss', ['sass']);
+});
+
+
+gulp.task('css', function () {
+    var plugins = [
+        autoprefixer({browsers: ['last 1 version']}),
+        cssnano()
+    ];
+    return gulp.src('./src/css/*.css')
+        .pipe(postcss(plugins))
+        .pipe(gulp.dest('./css'));
 });
