@@ -3,27 +3,44 @@ const debug = require('gulp-debug');
 const clean = require('gulp-clean');
 const htmlLint = require('gulp-html-lint');
 const htmlbeautify = require('gulp-html-beautify');
+const htmlmin = require('gulp-htmlmin');
+const sass = require('gulp-sass');
  
-
 
 gulp.task('default', ["build"]);
 
 gulp.task('clean', () => {
-    return gulp.src('./index.html', {read: false})
+    return gulp.src(['./index.html', 'tmp/**/*'], {read: false})
         .pipe(debug({title: '[clean]'}))
         .pipe(clean());
 });
  
-gulp.task('build', () =>
-    gulp.src('src/**/*')
+gulp.task('build', ['html'], () =>
+    gulp.src('tmp/**/*')
         .pipe(debug({title: '[build]'}))
         .pipe(gulp.dest('./'))
 );
 
 
-gulp.task('html', ['html:beutifier', 'html:linter']);
+gulp.task('html', ['html:beutifier'], () => {
+    const options = {
+        collapseWhitespace: true,
+        minifyCSS: true,
+        minifyJS: true,
+        removeComments: true,
+        removeEmptyElements: true,
+        removeOptionalTags: true,
+        removeRedundantAttributes: true,
+        useShortDoctype: true
+    }
+    
+    gulp.src('src/index.html')
+        .pipe(debug({title: '[html:minifier]'}))
+        .pipe(htmlmin(options))
+        .pipe(gulp.dest('./tmp'));
+});
 
-gulp.task('html:beutifier', function() {
+gulp.task('html:beutifier', () => {
   gulp.src('src/index.html')
     .pipe(debug({title: '[html:beutifier]'}))
     .pipe(htmlbeautify())
@@ -36,4 +53,15 @@ gulp.task('html:linter', () => {
         .pipe(htmlLint())
         .pipe(htmlLint.format())
         .pipe(htmlLint.failOnError());
+});
+
+gulp.task('sass', () => {
+  return gulp.src('src/sass/**/*.scss')
+    .pipe(debug({title: '[sass]'}))
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest('./src/css'));
+});
+ 
+gulp.task('sass:watch', () => {
+  gulp.watch('src/sass/**/*.scss', ['sass']);
 });
