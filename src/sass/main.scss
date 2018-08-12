@@ -39,6 +39,7 @@ header {
   padding:10px;
   top:0;
   left:0;
+  box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.75);
 }
 
 .header{
@@ -53,10 +54,6 @@ header {
   margin-left:15px;
   color: $text-white;
   font-family:$code-font;
-}
-
-.main-nav {
-  display:none;
 }
 
 .main-wrapper {
@@ -126,3 +123,26 @@ header {
       font-style:italic;
     }
 }
+
+
+// Legacy
+
+.main-nav {
+  display:none;
+}
+
+.section-navigation{
+  display:none;
+}
+
+hr {
+  //display:none;
+  display: block;
+  margin-before: 0.5em;
+  margin-after: 0.5em;
+  margin-start: auto;
+  margin-end: auto;
+  border: solid 1px $code-background;
+}
+
+table {background-color:red;color:#FFF;}
