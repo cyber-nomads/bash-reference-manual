@@ -61,7 +61,7 @@ gulp.task('sass', () => {
   return gulp.src('src/sass/**/*.scss')
     .pipe(debug({title: '[sass]'}))
     .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest('./src/css'));
+    .pipe(gulp.dest('./src/assets/css'));
 });
  
 gulp.task('sass:watch', () => {
@@ -76,5 +76,5 @@ gulp.task('css', function () {
     ];
     return gulp.src('./src/css/*.css')
         .pipe(postcss(plugins))
-        .pipe(gulp.dest('./css'));
+        .pipe(gulp.dest('./assets/css'));
 });
