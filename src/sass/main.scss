@@ -1,7 +1,20 @@
-$font-stack:    Helvetica, sans-serif;
-$primary-color: #323;
+
+// @see: https://github.com/odb/official-bash-logo/blob/master/assets/bash-style-guide.pdf
+
+// -- <code>
+$code-background: #2F3A43;
+$code-font: 'Roboto Mono', monospace;
+
+// -- Texts
+$text-font: 'Roboto', sans-serif;
+$regular-text:#2F3A43;
+$regular-background: #FFFFFF;
+
+// -- Featured
+$featured-text: #48B44F;
+$featured-background: #33AB9D;
 
 body {
-  font: 10% $font-stack;
-  color: $primary-color;
+  font-family: $text-font;
+  color: $regular-text;
 }
