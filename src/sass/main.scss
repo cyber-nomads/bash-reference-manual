@@ -96,4 +96,13 @@ header {
     color: $link-color-hover;
   }
   
+  pre, code {
+    overflow-x:scroll;
+    background-color:$code-background;
+    line-height:1.8;
+    color:#FFF; //@TODO: TO BE REFACTOR
+    padding:0 5px;
+    font-family:$code-font;
+  }
+  
 }
