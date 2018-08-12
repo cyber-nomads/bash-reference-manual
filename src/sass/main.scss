@@ -9,6 +9,7 @@ $code-font: 'Roboto Mono', monospace;
 $text-font: 'Roboto', sans-serif;
 $regular-text:#2F3A43;
 $regular-background: #FFFFFF;
+$text-white: #FFF;
 
 // -- Featured
 $featured-text: #48B44F;
@@ -19,9 +20,28 @@ $featured-background: #33AB9D;
 body {
   font-family: $text-font;
   color: $regular-text;
+  width: 100%;
 }
 
-/*
-  font-size: 25px;
-  line-height: 1.8;
-*/
+header {
+  background-color: $featured-background;
+  position: fixed;
+  width:100%;
+  padding:10px;
+  top:0;
+  left:0;
+}
+
+.header{
+  display:flex;
+  align-items:center;
+}
+.header__img{
+  min-width:35px;
+  width: 12vw;
+}
+.header__text{
+  margin-left:15px;
+  color: $text-white;
+  font-family:$code-font;
+}
