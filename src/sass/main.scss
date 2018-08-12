@@ -15,12 +15,20 @@ $text-white: #FFF;
 $featured-text: #48B44F;
 $featured-background: #33AB9D;
 
+
+/// @TODO: To unify criteria
+$title-color: #2F3A43;
+$link-color: #33AB9D;
+$link-color-hover: #48B44F;
+
+
 @import 'include/reset';
 
 body {
   font-family: $text-font;
   color: $regular-text;
   width: 100%;
+  margin-top: 75px;
 }
 
 header {
@@ -44,4 +52,38 @@ header {
   margin-left:15px;
   color: $text-white;
   font-family:$code-font;
+}
+
+.main-nav {
+  display:none;
+}
+
+.main-wrapper {
+  margin: 0 auto;
+  padding: 0 15px;
+  line-height: 1.8;
+  overflow-x:none;
+  
+  h1, h2, h3, h4 {
+    color: $title-color;
+    line-height: 1.5;
+  }
+  
+  h1 {
+    font-size: 2.2rem;
+    font-weight:700;
+  }
+  
+  h2{
+    font-size: 2rem;
+    font-weight:600;
+  }
+  
+  h3 {
+    font-size: 1.8rem;
+  }
+  
+  h4 {
+    font-size: 1.7rem;
+  }
 }
