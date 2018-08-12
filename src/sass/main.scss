@@ -86,4 +86,14 @@ header {
   h4 {
     font-size: 1.7rem;
   }
+  
+  a {
+    color: $link-color;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: $link-color-hover;
+  }
+  
 }
