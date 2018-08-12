@@ -14,7 +14,14 @@ $regular-background: #FFFFFF;
 $featured-text: #48B44F;
 $featured-background: #33AB9D;
 
+@import 'include/reset';
+
 body {
   font-family: $text-font;
   color: $regular-text;
 }
+
+/*
+  font-size: 25px;
+  line-height: 1.8;
+*/
