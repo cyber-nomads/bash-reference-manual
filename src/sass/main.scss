@@ -26,6 +26,7 @@ $link-color-hover: #48B44F;
 
 body {
   font-family: $text-font;
+  -webkit-font-smoothing: antialiased;  
   color: $regular-text;
   width: 100%;
   margin-top: 75px;
@@ -96,13 +97,32 @@ header {
     color: $link-color-hover;
   }
   
+  
+  
   pre, code {
     overflow-x:scroll;
-    background-color:$code-background;
     line-height:1.8;
-    color:#FFF; //@TODO: TO BE REFACTOR
     padding:0 5px;
     font-family:$code-font;
   }
   
+  code {
+    background-color:#E6EEF2;
+  }
+  pre {
+    margin: 8px 0;
+    border-radius:4px;
+    padding: 5px 10px;
+    background-color:$code-background;
+    color:#FFF; //@TODO: TO BE REFACTOR
+  }
+  
+    dt {
+      margin-top:15px;
+      font-weight:700;
+    }
+    dd {
+      padding:0 15px 0 30px;
+      font-style:italic;
+    }
 }
