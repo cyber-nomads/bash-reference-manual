@@ -1,39 +1,30 @@
-
-// @see: https://github.com/odb/official-bash-logo/blob/master/assets/bash-style-guide.pdf
-
-// -- <code>
-$code-background: #2F3A43;
-$code-font: 'Roboto Mono', monospace;
-
-// -- Texts
-$text-font: 'Roboto', sans-serif;
-$regular-text:#2F3A43;
-$regular-background: #FFFFFF;
-$text-white: #FFF;
-
-// -- Featured
-$featured-text: #48B44F;
-$featured-background: #33AB9D;
+/** --- Documentation
+* @see: https://github.com/odb/official-bash-logo/blob/master/assets/bash-style-guide.pdf
+*/
 
 
-/// @TODO: To unify criteria
-$title-color: #2F3A43;
-$link-color: #33AB9D;
-$link-color-hover: #48B44F;
-
-
+/* --- Imports --- */
 @import 'include/reset';
+
+
+/* --- Variables --- */
+$code-font: 'Roboto Mono', monospace;
+$text-font: 'Roboto', sans-serif;
+$code-background-color: #E6EEF2;
+$color-dark: #2F3A43;
+$color-white: #FFF;
+$color-featured: #33AB9D;
 
 body {
   font-family: $text-font;
   -webkit-font-smoothing: antialiased;  
-  color: $regular-text;
+  color: $color-dark;
   width: 100%;
   margin-top: 75px;
 }
 
 header {
-  background-color: $featured-background;
+  background-color: $color-featured;
   position: fixed;
   width:100%;
   padding:10px;
@@ -52,7 +43,7 @@ header {
 }
 .header__text{
   margin-left:15px;
-  color: $text-white;
+  color: $color-white;
   font-family:$code-font;
 }
 
@@ -63,7 +54,7 @@ header {
   overflow-x:none;
   
   h1, h2, h3, h4 {
-    color: $title-color;
+    color: $color-dark;
     line-height: 1.5;
   }
   
@@ -86,14 +77,14 @@ header {
   }
   
   a {
-    color: $link-color;
+    color: $color-featured;
     
   }
 
   a:hover {
     text-decoration: none;
-    background-color: $link-color;
-    color:#fff;
+    background-color: $color-featured;
+    color: $color-white;
   }
   
   
@@ -106,14 +97,13 @@ header {
   }
   
   code {
-    background-color:#E6EEF2;
+    background-color:$code-background-color;
   }
   pre {
     margin: 8px 0;
     border-radius:4px;
     padding: 5px 10px;
-    background-color:$code-background;
-    color:#FFF; //@TODO: TO BE REFACTOR
+    background-color:$color-dark;
   }
   
     dt {
@@ -127,24 +117,18 @@ header {
 }
 
 
-// Legacy
-
-.main-nav {
-  display:none;
-}
 
 .section-navigation{
   display:none;
 }
 
 hr {
-  //display:none;
   display: block;
   margin-before: 0.5em;
   margin-after: 0.5em;
   margin-start: auto;
   margin-end: auto;
-  border: solid 1px $code-background;
+  border: solid 1px $color-dark;
 }
 
 .section-menu{
@@ -161,3 +145,14 @@ hr {
 .appendixes {
   display:none;
 }
+
+
+// Legacy
+.main-nav {
+  display:none;
+}
+
+pre {
+  color:#FFF;
+}
+
