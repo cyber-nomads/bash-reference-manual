@@ -87,11 +87,13 @@ header {
   
   a {
     color: $link-color;
-    text-decoration: none;
+    
   }
 
   a:hover {
-    color: $link-color-hover;
+    text-decoration: none;
+    background-color: $link-color;
+    color:#fff;
   }
   
   
@@ -145,4 +147,17 @@ hr {
   border: solid 1px $code-background;
 }
 
-table {background-color:red;color:#FFF;}
+.section-menu{
+  margin-left:25px;
+  li {
+    list-style:disc;
+    padding-bottom: 10px;
+  }
+  span {
+    display:none;
+  }
+}
+
+.appendixes {
+  display:none;
+}
