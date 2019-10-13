@@ -1,0 +1,32 @@
+{
+  "name": "bash-reference-manual",
+  "version": "1.0.0",
+  "description": "Official GNU Bash Reference Manual's visual improvement",
+  "main": "server.js",
+  "scripts": {
+    "build": "gulp build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cyber-nomads/bash-reference-manual.git"
+  },
+  "author": "Cyber nomads",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/cyber-nomads/bash-reference-manual/issues"
+  },
+  "homepage": "https://github.com/cyber-nomads/bash-reference-manual#readme",
+  "devDependencies": {
+    "autoprefixer": "9.1.0",
+    "cssnano": "4.0.5",
+    "gulp": "3.9.1",
+    "gulp-clean": "0.4.0",
+    "gulp-debug": "4.0.0",
+    "gulp-html-beautify": "1.0.1",
+    "gulp-html-lint": "0.0.2",
+    "gulp-htmlmin": "4.0.0",
+    "gulp-postcss": "8.0.0",
+    "gulp-sass": "4.0.1"
+  }
+}
